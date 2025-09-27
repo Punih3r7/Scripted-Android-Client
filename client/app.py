@@ -22,7 +22,7 @@ print(device_data)
 
 # Send data to the collector API (server must be running on port 5000)
 try:
-    response = requests.post("http://server:5000/collect", json=device_data)
+    response = requests.post("http://localhost:5000/collect", json=device_data)  # Use localhost
     print("[+] Response from server:", response.text)
 except Exception as e:
     print("[-] Error sending data:", e)
