@@ -29,7 +29,9 @@ def generate_fake_imei():
     return f"35{random.randint(100000000000000, 999999999999999)}"
 
 # Server endpoint where data will be sent
-server_url = "http://server:5000/api/connect"
+server_url = "http://127.0.0.1:5000/api/connect"
+print("Connecting to:", server_url)
+
 
 while True:
     imei = generate_fake_imei()
