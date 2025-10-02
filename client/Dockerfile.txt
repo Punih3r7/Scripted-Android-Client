@@ -1,8 +1,17 @@
-FROM python:3.13-slim
+# Use Python's official image
+FROM python:3.9-slim
 
-WORKDIR /app
-COPY . /app
+# Set working directory
+WORKDIR /client
 
-RUN pip install --no-cache-dir -r requirements.txt
+# Copy requirements.txt to the container
+COPY requirements.txt .
 
-CMD ["python", "app.py"]
+# Install dependencies
+RUN pip install -r requirements.txt
+
+# Copy client files
+COPY . .
+
+# Command to run the client app
+CMD ["python", "client.py"]
